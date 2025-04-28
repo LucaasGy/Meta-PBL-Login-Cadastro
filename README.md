@@ -10,5 +10,6 @@ Backend
 - bcrypt -> criptografa senhas
 - cors -> comunicação frontend <> backend
 - dotenv -> facilita gerenciamento de arquivo .env
+- jsonwebtoken -> token para autentificação de login
 
 Frontend
