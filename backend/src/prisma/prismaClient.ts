@@ -1,5 +1,6 @@
 // Aqui fica a instância do prisma pra "conversar" com o BD
 
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, Prisma } from "@prisma/client";
 
-export const prisma = new PrismaClient();
+export const prisma_client = new PrismaClient();
+export const PrismaError = Prisma;
