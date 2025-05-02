@@ -2,9 +2,12 @@
 
 import { prisma_client, PrismaError } from "../prisma/prismaClient";
 import { Usuario } from "../model/usuario";
+import { validarDadosCadastro, validarDadosLogin } from "../validators/validarDados";
 import bcrypt from "bcrypt";
 
 export async function cadastrar(nome: string, email: string, senha: string) {
+  validarDadosCadastro(nome, email, senha);
+  
   const senhaHash = await bcrypt.hash(senha, 10);  
   
   try {
@@ -28,6 +31,8 @@ export async function cadastrar(nome: string, email: string, senha: string) {
 }
 
 export async function logar(email: string, senha: string) {
+  validarDadosLogin(email, senha);
+
   try {
     const usuario = await prisma_client.usuario.findUnique({ where: { email } });
     
