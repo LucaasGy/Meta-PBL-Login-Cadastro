@@ -11,5 +11,6 @@ Backend
 - cors -> comunicação frontend <> backend
 - dotenv -> facilita gerenciamento de arquivo .env
 - jsonwebtoken -> token para autentificação de login
+- zod -> validar dados de entrada do usuário
 
 Frontend
